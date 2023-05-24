@@ -13,11 +13,17 @@
   },
   "dependencies": {
     "@andex/ui-libs": "^0.1.0",
+    "framer-motion": "^10.12.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.2"
+    "styled-components": "^6.0.0-rc.2",
+    "styled-system": "^5.1.5",
+    "themeprovider-storybook": "^1.8.0"
   },
   "devDependencies": {
+    "@andex/eslint-config-andex": "^1.1.1",
+    "@storybook/addon-a11y": "^7.0.17",
+    "@storybook/addon-actions": "^7.0.17",
     "@storybook/addon-essentials": "^7.0.17",
     "@storybook/addon-interactions": "^7.0.17",
     "@storybook/addon-links": "^7.0.17",
@@ -28,8 +34,10 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
+    "@types/styled-system": "^5.1.16",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "@vanilla-extract/vite-plugin": "^3.8.2",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
