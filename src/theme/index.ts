@@ -1,11 +1,13 @@
 import { vars } from "../libs/css/vars.css";
 import { AlertTheme } from "../components/Alert/types";
+import { CardTheme } from "../components/Card/types";
 import { Breakpoints, MediaQueries, ZIndices } from "./types";
 
 export interface AndexTheme {
     siteWidth: number;
     isDark: boolean;
     alert: AlertTheme;
+    card: CardTheme;
     colors: typeof vars.colors;
     breakpoints: Breakpoints;
     mediaQueries: MediaQueries;
