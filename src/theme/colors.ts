@@ -1,4 +1,4 @@
-import { vars } from "@andex/ui-libs";
+import { vars } from "../libs";
 
 export const lightColors = vars.colors;
 

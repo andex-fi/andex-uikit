@@ -1,4 +1,4 @@
-import { breakpoints, mediaQueries, vars } from "@andex/ui-libs";
+import { breakpoints, mediaQueries, vars } from "../libs";
 
 export default {
   siteWidth: 1200,
