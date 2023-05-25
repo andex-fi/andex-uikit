@@ -1,1 +1,0 @@
-import { ThemeProvider, DefaultTheme } from "styled-components";

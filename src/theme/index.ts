@@ -1,9 +1,11 @@
-import { vars } from "../libs";
+import { vars } from "../libs/css/vars.css";
+import { AlertTheme } from "../components/Alert/types";
 import { Breakpoints, MediaQueries, ZIndices } from "./types";
 
 export interface AndexTheme {
     siteWidth: number;
     isDark: boolean;
+    alert: AlertTheme;
     colors: typeof vars.colors;
     breakpoints: Breakpoints;
     mediaQueries: MediaQueries;

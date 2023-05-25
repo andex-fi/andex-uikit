@@ -1,4 +1,4 @@
-import { vars } from "../libs";
+import { vars } from "../libs/css/vars.css";
 
 export const lightColors = vars.colors;
 
