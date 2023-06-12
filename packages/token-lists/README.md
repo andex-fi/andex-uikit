@@ -1,6 +1,6 @@
-# PancakeSwap Token Lists
+# Andex Token Lists
 
-This repo contains main PancakeSwap token list and tools to validate it.
+This repo contains main Andex token list and tools to validate it.
 
 ## How to add external lists
 
@@ -9,7 +9,7 @@ URLs to external lists are stored in `token-lists.json`, if you want your list t
 ## How to add new lists within this repository
 
 - Add an array of tokens under `src/tokens`
-- Add `checksum:newlistname`, `generate:newlistname`, `makelist:newlistname` command to `package.json` analogous to PancakeSwap default and extended list scripts.
+- Add `checksum:newlistname`, `generate:newlistname`, `makelist:newlistname` command to `package.json` analogous to Andex default and extended list scripts.
 - Modify `checksum.ts`, `buildList.ts`, `ci-check.ts`, and `default.test.ts` to handle new list
 
 ## How to add new tokens to PancakeSwap (extended) token list

@@ -1,6 +1,6 @@
-# eslint-config-pancake
+# eslint-config-andex
 
-Pancake Eslint config with:
+Andex Eslint config with:
 
 - Airbnb config
 - Typescript
@@ -9,7 +9,7 @@ Pancake Eslint config with:
 ## Usage
 
 ```
-npx install-peerdeps --dev @pancakeswap/eslint-config-pancake
+npx install-peerdeps --dev @andex/eslint-config-andex
 ```
 
-Add `"extends": "@pancakeswap/eslint-config-pancake"` to your eslint config file.
+Add `"extends": "@andex/eslint-config-andex"` to your eslint config file.
