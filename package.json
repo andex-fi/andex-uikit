@@ -26,7 +26,7 @@
     "postinstall": "lerna run postinstall"
   },
   "devDependencies": {
-    "@andex/eslint-config-andex": "1.2.0",
+    "@andex/eslint-config-andex": "1.1.1",
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@commitlint/cli": "^13.1.0",
