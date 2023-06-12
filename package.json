@@ -1,61 +1,62 @@
 {
-  "name": "uikit",
-  "version": "0.1.0",
+  "name": "andex-toolkit",
+  "version": "1.0.0",
+  "description": "Andex frontend packages",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andex-fi/andex-toolkit.git"
   },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andex-fi/andex-toolkit/issues"
+  },
+  "homepage": "https://github.com/andex-fi/andex-toolkit#readme",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "format:check": "lerna run format:check",
+    "storybook:build": "lerna run storybook:build",
+    "release": "yarn build && yarn lerna publish",
+    "prepare": "husky install",
+    "postinstall": "lerna run postinstall"
   },
   "devDependencies": {
-    "@andex/eslint-config-andex": "^1.1.1",
-    "@storybook/addon-a11y": "^7.0.20",
-    "@storybook/addon-actions": "^7.0.20",
-    "@storybook/addon-essentials": "^7.0.20",
-    "@storybook/addon-interactions": "^7.0.20",
-    "@storybook/addon-links": "^7.0.20",
-    "@storybook/blocks": "^7.0.20",
-    "@storybook/preset-create-react-app": "^7.0.20",
-    "@storybook/react": "^7.0.20",
-    "@storybook/react-webpack5": "^7.0.20",
-    "@storybook/testing-library": "^0.0.14-next.2",
-    "babel-plugin-named-exports-order": "^0.0.2",
-    "eslint-plugin-storybook": "^0.6.12",
-    "prop-types": "^15.8.1",
-    "storybook": "^7.0.20",
+    "@andex/eslint-config-andex": "1.2.0",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@rollup/plugin-url": "^6.0.0",
+    "@storybook/addon-a11y": "^6.3.6",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/react": "^6.3.6",
+    "@types/react": "^17.0.5",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-transition-group": "^4.4.1",
+    "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.26.0",
+    "husky": "^7.0.0",
+    "jest": "^26.6.3",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2",
+    "react-is": "^17.0.2",
+    "rollup": "^2.47.0",
     "themeprovider-storybook": "^1.7.2",
-    "webpack": "^5.86.0"
+    "ts-jest": "^26.5.6",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
   }
 }
