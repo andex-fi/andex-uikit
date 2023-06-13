@@ -27,9 +27,9 @@ export interface NavProps {
   activeSubItem: string;
   isDark: boolean;
   toggleTheme: (isDark: boolean) => void;
-  cakePriceUsd?: number;
+  andxPriceUsd?: number;
   currentLang: string;
-  buyCakeLabel: string;
+  buyAndxLabel: string;
   langs: Language[];
   setLang: (lang: Language) => void;
 }

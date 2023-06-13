@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 import MenuItems from "../../components/MenuItems/MenuItems";
 import { SubMenuItems } from "../../components/SubMenuItems";
 import { useMatchBreakpoints } from "../../hooks";
-import CakePrice from "../../components/CakePrice/CakePrice";
+import AndxPrice from "../../components/AndxPrice/AndxPrice";
 import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
 import { NavProps } from "./types";
@@ -72,14 +72,14 @@ const Menu: React.FC<NavProps> = ({
   toggleTheme,
   currentLang,
   setLang,
-  cakePriceUsd,
+  andxPriceUsd,
   links,
   subLinks,
   footerLinks,
   activeItem,
   activeSubItem,
   langs,
-  buyCakeLabel,
+  buyAndxLabel,
   children,
 }) => {
   const { isMobile } = useMatchBreakpoints();
@@ -138,7 +138,7 @@ const Menu: React.FC<NavProps> = ({
             <Flex alignItems="center" height="100%">
               {!isMobile && (
                 <Box mr="12px">
-                  <CakePrice cakePriceUsd={cakePriceUsd} />
+                  <AndxPrice andxPriceUsd={andxPriceUsd} />
                 </Box>
               )}
               <Box mt="4px">
@@ -179,8 +179,8 @@ const Menu: React.FC<NavProps> = ({
               langs={langs}
               setLang={setLang}
               currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              buyCakeLabel={buyCakeLabel}
+              andxPriceUsd={andxPriceUsd}
+              buyAndxLabel={buyAndxLabel}
               mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
             />
           </Inner>
