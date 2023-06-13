@@ -58,53 +58,53 @@ export const Default: React.FC = () => {
 };
 
 export const UnitDisplay: React.FC = () => {
-  const CAKE_PRICE = 69;
-  const [cakeValue, setCakeValue] = useState("1006.086956");
+  const ANDX_PRICE = 69;
+  const [andxValue, setAndxValue] = useState("1006.086956");
 
-  const cakeToUSD = (input: string) => {
-    const convertedToUSD = parseFloat(input) * CAKE_PRICE;
+  const andxToUSD = (input: string) => {
+    const convertedToUSD = parseFloat(input) * ANDX_PRICE;
     return `~${convertedToUSD.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     })} USD`;
   };
 
-  const handleCakeChange = (input: string) => {
-    setCakeValue(input);
+  const handleAndxChange = (input: string) => {
+    setAndxValue(input);
   };
 
   return (
     <>
       <Box width="300px" mb="24px">
         <BalanceInput
-          onUserInput={handleCakeChange}
-          value={cakeValue}
-          currencyValue={cakeToUSD(cakeValue)}
+          onUserInput={handleAndxChange}
+          value={andxValue}
+          currencyValue={andxToUSD(andxValue)}
           placeholder="0.0"
-          unit="CAKE"
+          unit="ANDX"
         />
       </Box>
       {/* Long token names with spaces */}
       <Box width="300px">
         <BalanceInput
-          onUserInput={handleCakeChange}
-          value={cakeValue}
-          currencyValue="2854.66 BADGER-HOTCROSS LP"
+          onUserInput={handleAndxChange}
+          value={andxValue}
+          currencyValue="2854.66 ETH-VENOM LP"
           placeholder="0.0"
-          unit="CAKE-BNB LP"
+          unit="ANDX-VENOM LP"
         />
       </Box>
     </>
   );
 };
 
-export const SiwtchUnits: React.FC = () => {
-  const CAKE_PRICE = 69;
-  const [editingUnit, setEditingUnit] = useState<"CAKE" | "USD">("CAKE");
-  const conversionUnit = editingUnit === "CAKE" ? "USD" : "CAKE";
+export const SwitchUnits: React.FC = () => {
+  const ANDX_PRICE = 69;
+  const [editingUnit, setEditingUnit] = useState<"ANDX" | "USD">("ANDX");
+  const conversionUnit = editingUnit === "ANDX" ? "USD" : "ANDX";
   const [values, setValues] = useState({
-    CAKE: "1006.086957",
-    USD: `${1006.086957 * CAKE_PRICE}`,
+    ANDX: "1006.086957",
+    USD: `${1006.086957 * ANDX_PRICE}`,
   });
 
   const currencyValue = !Number.isNaN(parseFloat(values[conversionUnit]))
@@ -115,7 +115,7 @@ export const SiwtchUnits: React.FC = () => {
     : "0.00";
 
   const switchEditingUnits = () => {
-    const editingUnitAfterChange = editingUnit === "CAKE" ? "USD" : "CAKE";
+    const editingUnitAfterChange = editingUnit === "ANDX" ? "USD" : "ANDX";
     // This is needed to persist same value as shown for currencyValue after switching
     // otherwise user will see lots of decimals
     const valuesAfterChange = { ...values };
@@ -126,16 +126,16 @@ export const SiwtchUnits: React.FC = () => {
     setEditingUnit(editingUnitAfterChange);
   };
 
-  const handleCakeChange = (input: string) => {
+  const handleAndxChange = (input: string) => {
     const inputAsFloat = parseFloat(input);
-    if (editingUnit === "CAKE") {
+    if (editingUnit === "ANDX") {
       setValues({
-        CAKE: input,
-        USD: Number.isNaN(inputAsFloat) ? "" : `${inputAsFloat * CAKE_PRICE}`,
+        ANDX: input,
+        USD: Number.isNaN(inputAsFloat) ? "" : `${inputAsFloat * ANDX_PRICE}`,
       });
     } else {
       setValues({
-        CAKE: Number.isNaN(inputAsFloat) ? "" : `${inputAsFloat / CAKE_PRICE}`,
+        ANDX: Number.isNaN(inputAsFloat) ? "" : `${inputAsFloat / ANDX_PRICE}`,
         USD: input,
       });
     }
@@ -144,7 +144,7 @@ export const SiwtchUnits: React.FC = () => {
   return (
     <Box width="300px">
       <BalanceInput
-        onUserInput={handleCakeChange}
+        onUserInput={handleAndxChange}
         value={values[editingUnit]}
         currencyValue={`~${currencyValue} ${conversionUnit}`}
         placeholder="0.0"
