@@ -68,7 +68,6 @@ export type Colors = {
   gradients: Gradients;
 
   // Additional colors
-  binance: string;
   overlay: string;
   gold: string;
   silver: string;
