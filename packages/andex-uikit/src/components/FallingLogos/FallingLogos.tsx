@@ -1,9 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import BunnyIcon from "../Svg/Icons/Logo";
-import { BunnyProps, FallingBunniesProps } from "./types";
+import LogoIcon from "../Svg/Icons/Logo";
+import { LogoProps, FallingLogosProps } from "./types";
 
-const bunnyFall = keyframes`
+const logoFall = keyframes`
   0% {
     opacity: 1;
     transform: translate(0, -100%) rotateZ(0deg);
@@ -20,7 +20,7 @@ const bunnyFall = keyframes`
   }
 `;
 
-const Bunny = styled.div<BunnyProps>`
+const Logo = styled.div<LogoProps>`
   display: inline-flex;
   position: fixed;
   top: 0;
@@ -30,7 +30,7 @@ const Bunny = styled.div<BunnyProps>`
   pointer-events: none;
   z-index: 99999;
 
-  animation-name: ${bunnyFall};
+  animation-name: ${logoFall};
   animation-duration: ${({ duration }) => `${duration}s`};
   animation-timing-function: linear;
   animation-iteration-count: ${({ iterations }) => (Number.isFinite(iterations) ? String(iterations) : "infinite")};
@@ -65,16 +65,16 @@ const Bunny = styled.div<BunnyProps>`
   }
 `;
 
-const FallingBunnies: React.FC<FallingBunniesProps> = ({
+const FallingBunnies: React.FC<FallingLogosProps> = ({
   count = 30,
   size = 32,
   iterations = Infinity,
   duration = 10,
 }) => {
   const bunnies = [...Array(count)].map((_, index) => (
-    <Bunny key={String(index)} position={Math.random() * 100} iterations={iterations} duration={duration}>
-      <BunnyIcon width={size} height={size} />
-    </Bunny>
+    <Logo key={String(index)} position={Math.random() * 100} iterations={iterations} duration={duration}>
+      <LogoIcon width={size} height={size} />
+    </Logo>
   ));
 
   return <div>{bunnies}</div>;

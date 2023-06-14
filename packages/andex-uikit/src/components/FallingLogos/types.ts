@@ -1,10 +1,10 @@
-export interface BunnyProps {
+export interface LogoProps {
   position: number;
   iterations: number;
   duration: number;
 }
 
-export interface FallingBunniesProps {
+export interface FallingLogosProps {
   size?: number;
   count?: number;
   iterations?: number;

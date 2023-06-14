@@ -18,9 +18,15 @@ export const Default: React.FC = () => {
     <BrowserRouter>
       <Text p="32px">
         <BreadCrumbs mb="32px">
-          <a href="/"><Text color="universal">Link</Text></a>
-          <a href="/"><Text color="universal">Link</Text></a>
-          <RouterLink to="/"><Text color="universal">React Router Link</Text></RouterLink>
+          <a href="/">
+            <Text color="universal">Link</Text>
+          </a>
+          <a href="/">
+            <Text color="universal">Link</Text>
+          </a>
+          <RouterLink to="/">
+            <Text color="universal">React Router Link</Text>
+          </RouterLink>
           <Text color="textDisabled">Crumb 1</Text>
           <Text color="textDisabled">Crumb 2</Text>
         </BreadCrumbs>
@@ -39,9 +45,7 @@ export const CustomSeparator: React.FC = () => {
       <Text mb="16px">
         <BreadCrumbs separator={<LogoIcon width="24px" />}>
           <Link href="/" color="secondary" style={{ fontWeight: 400 }}>
-            <Text color="universal">
-              Link
-            </Text>
+            <Text color="universal">Link</Text>
           </Link>
           <Text color="textDisabled">Crumb 1</Text>
           <Text color="textDisabled">Crumb 2</Text>
@@ -50,14 +54,10 @@ export const CustomSeparator: React.FC = () => {
       <Text mb="16px">
         <BreadCrumbs separator={<PresentWonIcon width="48px" />}>
           <Link href="/" color="failure" style={{ fontWeight: 400 }}>
-            <Text color="universal">
-              Link
-            </Text>
+            <Text color="universal">Link</Text>
           </Link>
           <Link href="/" color="primary" style={{ fontWeight: 400 }}>
-            <Text color="universal">
-              Link 2
-            </Text>
+            <Text color="universal">Link 2</Text>
           </Link>
           <Text color="textDisabled">Crumb 2</Text>
         </BreadCrumbs>
