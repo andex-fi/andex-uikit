@@ -51,10 +51,10 @@ export const footerLinks: FooterLinkType[] = [
         label: "Documentation",
         href: "https://docs.andex.finance",
       },
-      /*{
+      /* {
         label: "Audits",
         href: "https://docs.andex.finance/help/faq#is-pancakeswap-safe-has-pancakeswap-been-audited",
-      },*/
+      }, */
     ],
   },
 ];
