@@ -35,7 +35,7 @@ For list to be considered valid it need to satisfy the following criteria:
 Note - this is not something we expect pull requests for.
 
 ```shell script
-# Fetch the Top100 Tokens on PancakeSwap v2, and update list.
+# Fetch the Top100 Tokens on Andex, and update list.
 $ yarn fetch:pcs-top-100
 
 # Build token list (pancakeswap-top-100.json)
