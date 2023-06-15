@@ -57,7 +57,7 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
+    background-color: ${({ theme }) => theme.colors.universal};
     &:after {
       background-color: ${({ theme }) => theme.radio.handleBackground};
     }
