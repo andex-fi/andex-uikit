@@ -12,7 +12,7 @@ import AndxPrice from "../../components/AndxPrice/AndxPrice";
 import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
 import { NavProps } from "./types";
-import LangSelector from "../../components/LangSelector/LangSelector";
+// import LangSelector from "../../components/LangSelector/LangSelector";
 import { MenuContext } from "./context";
 
 const Wrapper = styled.div`
@@ -26,8 +26,8 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background-color: ${({ theme }) => theme.colors.background};
+  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
@@ -67,7 +67,7 @@ const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
   userMenu,
   banner,
-  globalMenu,
+  // globalMenu,
   isDark,
   toggleTheme,
   currentLang,
@@ -133,7 +133,9 @@ const Menu: React.FC<NavProps> = ({
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
+              {!isMobile && (
+                <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="400px" />
+              )}
             </Flex>
             <Flex alignItems="center" height="100%">
               {!isMobile && (
@@ -141,7 +143,7 @@ const Menu: React.FC<NavProps> = ({
                   <AndxPrice andxPriceUsd={andxPriceUsd} />
                 </Box>
               )}
-              <Box mt="4px">
+              {/* <Box mt="4px">
                 <LangSelector
                   currentLang={currentLang}
                   langs={langs}
@@ -150,8 +152,8 @@ const Menu: React.FC<NavProps> = ({
                   color="textSubtle"
                   hideLanguage
                 />
-              </Box>
-              {globalMenu} {userMenu}
+              </Box> */}
+              {/* {globalMenu} */} {userMenu}
             </Flex>
           </StyledNav>
         </FixedContainer>

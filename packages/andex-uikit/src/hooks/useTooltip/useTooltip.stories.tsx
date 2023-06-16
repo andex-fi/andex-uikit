@@ -14,7 +14,7 @@ const GridCell = styled.div`
 `;
 
 const ReferenceElement = styled.div`
-  background-color: #1fc7d4;
+  background-color: #701fd4;
   width: 160px;
   height: 160px;
   border-radius: 8px;
@@ -320,11 +320,22 @@ export const ScreenEdges: React.FC = () => {
 };
 
 export const ThemeInversion: React.FC = () => {
+  const [numericValue, setNumericValue] = useState(5);
+
+  const handleNumericChange = (input) => {
+    setNumericValue(input);
+  };
+
   const tooltipContent = (
     <>
       <Text>Tooltips have inverted theme</Text>
       <Toggle />
-      <BalanceInput value="1.0" currencyValue="~623.45 USD" placeholder="0.0" />
+      <BalanceInput
+        onUserInput={handleNumericChange}
+        value={numericValue}
+        currencyValue="~623.45 USD"
+        placeholder="0.0"
+      />
     </>
   );
   const { targetRef, tooltip } = useTooltip(tooltipContent, { placement: "bottom" });
@@ -333,7 +344,12 @@ export const ThemeInversion: React.FC = () => {
       <div style={{ flex: "1" }}>
         <Text>Current theme looks like this</Text>
         <Toggle />
-        <BalanceInput value="1.0" currencyValue="~623.45 USD" placeholder="0.0" />
+        <BalanceInput
+          onUserInput={handleNumericChange}
+          value={numericValue}
+          currencyValue="~623.45 USD"
+          placeholder="0.0"
+        />
       </div>
       <div style={{ flex: "1", textAlign: "center" }}>
         <span ref={targetRef}>
