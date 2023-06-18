@@ -38,7 +38,7 @@ const langs: Language[] = [...Array(20)].map((_, i) => ({
   locale: `Locale${i}`,
 }));
 
-const UserMenuComponent: React.FC<{ variant?: Variant; text?: string; account?: string }> = ({
+const UserMenuComponent: React.FC<{ variant?: Variant; text: string; account?: string }> = ({
   variant = variants.DEFAULT,
   text,
   account = "0x8b017905DC96B38f817473dc885F84D4C76bC113",
@@ -86,7 +86,7 @@ const defaultProps = {
   langs,
   setLang: noop,
   currentLang: "EN",
-  cakePriceUsd: 0.023158668932877668,
+  andxPriceUsd: 0.023158668932877668,
   links,
   subLinks: links[0].items,
   footerLinks,
@@ -95,7 +95,7 @@ const defaultProps = {
   globalMenu: <GlobalMenuComponent />,
   activeItem: "/swap",
   activeSubItem: "https://exchange.andex.finance",
-  buyCakeLabel: "Buy ANDX",
+  buyAndxLabel: "Buy ANDX",
 };
 
 const ConnectedTemplate: React.FC<NavProps> = (args) => {
@@ -252,7 +252,7 @@ export const WithSubmenuSelected: React.FC = () => {
         langs={langs}
         setLang={noop}
         currentLang="EN"
-        cakePriceUsd={0.23158668932877668}
+        andxPriceUsd={0.23158668932877668}
         links={links}
         subLinks={links[0].items as SubMenuItemsType[]}
         footerLinks={footerLinks}

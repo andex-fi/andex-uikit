@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import BottomNavItem from "../BottomNavItem";
 import StyledBottomNav from "./styles";
 import { Box } from "../Box";
@@ -49,4 +49,4 @@ const BottomNav: React.FC<BottomNavProps> = ({ items = [], activeItem = "", acti
   );
 };
 
-export default BottomNav;
+export default memo(BottomNav);
