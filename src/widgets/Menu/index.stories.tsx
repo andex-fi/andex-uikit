@@ -19,7 +19,7 @@ import { links, userMenulinks } from "./config";
 import Menu from "./Menu";
 import { Language, NavProps } from "./types";
 import BottomDrawer from "../../components/BottomDrawer/BottomDrawer";
-import { SubMenuItemsType } from "../../components/SubMenuItems"
+import { SubMenuItemsType } from "../../components/SubMenuItems";
 
 export default {
   title: "Widgets/Menu",

@@ -32,5 +32,5 @@ export interface NavProps {
   buyAndxLabel: string;
   langs: Language[];
   setLang: (lang: Language) => void;
-  children?: any
+  children?: any;
 }
