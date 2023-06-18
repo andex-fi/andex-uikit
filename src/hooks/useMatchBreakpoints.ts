@@ -18,7 +18,7 @@ type MediaQueries = {
 
 /**
  * Can't use the media queries from "base.mediaQueries" because of how matchMedia works
- * In order for the listener to trigger we need have have the media query with a range, e.g.
+ * In order for the listener to trigger we need have the media query with a range, e.g.
  * (min-width: 370px) and (max-width: 576px)
  * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList
  */
@@ -37,7 +37,7 @@ const mediaQueries: MediaQueries = (() => {
     // Min width for next iteration
     prevMinWidth = breakpoint + 1;
 
-    return { ...accum, [size]: `(min-width: ${minWidth}px) and (max-width: ${breakpoint}px)` };
+    return { ...accum, [size]: `(min-width: ${minWidth}px) and (max-width: ${breakpoint - 1}px)` };
   }, {});
 })();
 
@@ -52,7 +52,8 @@ const getState = () => {
         [key]: false,
       };
     }
-    const mql = window.matchMedia(mediaQueries[size]);
+
+    const mql = typeof window?.matchMedia === "function" ? window.matchMedia(mediaQueries[size]) : null;
     return { ...accum, [key]: mql?.matches ?? false };
   }, {});
   return s;
@@ -64,24 +65,29 @@ const useMatchBreakpoints = (): BreakpointChecks => {
   useIsomorphicEffect(() => {
     // Create listeners for each media query returning a function to unsubscribe
     const handlers = Object.keys(mediaQueries).map((size) => {
-      const mql = window.matchMedia(mediaQueries[size]);
+      let mql: MediaQueryList;
+      let handler: (matchMediaQuery: MediaQueryListEvent) => void;
 
-      const handler = (matchMediaQuery: MediaQueryListEvent) => {
-        const key = getKey(size);
-        setState((prevState) => ({
-          ...prevState,
-          [key]: matchMediaQuery.matches,
-        }));
-      };
+      if (typeof window?.matchMedia === "function") {
+        mql = window.matchMedia(mediaQueries[size]);
 
-      // Safari < 14 fix
-      if (mql.addEventListener) {
-        mql.addEventListener("change", handler);
+        handler = (matchMediaQuery: MediaQueryListEvent) => {
+          const key = getKey(size);
+          setState((prevState) => ({
+            ...prevState,
+            [key]: matchMediaQuery.matches,
+          }));
+        };
+
+        // Safari < 14 fix
+        if (mql.addEventListener) {
+          mql.addEventListener("change", handler);
+        }
       }
 
       return () => {
         // Safari < 14 fix
-        if (mql.removeEventListener) {
+        if (mql?.removeEventListener) {
           mql.removeEventListener("change", handler);
         }
       };
