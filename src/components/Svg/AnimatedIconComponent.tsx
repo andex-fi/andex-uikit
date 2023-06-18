@@ -3,7 +3,7 @@ import * as IconModule from ".";
 import { StyledAnimatedIconComponent, StyledIconContainer } from "./styles";
 import { IconComponentType, SvgProps } from "./types";
 
-const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 
 const AnimatedIconComponent: React.FC<IconComponentType> = ({
   iconName,
