@@ -1,26 +1,41 @@
-# Andex Toolkit
+# Andex UIkit
 
-This repository is a monorepo manage with [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) and [Lerna](https://lerna.js.org/).
+[![Version](https://img.shields.io/npm/v/@andex/uikit)](https://www.npmjs.com/package/@andex/uikit) [![Size](https://img.shields.io/bundlephobia/min/@andex/uikit)](https://www.npmjs.com/package/@andex/uikit)
 
-## Packages
+Andex UIkit is a set of React components and hooks used to build pages on Andex's apps. It also contains a theme file for dark and light mode.
 
-- [andex-uikit](https://github.com/andex-fi/andex-toolkit/tree/master/packages/andex-uikit) : React components used to build the Andex UI.
-- [eslint-config-andex](https://github.com/andex-fi/andex-toolkit/tree/master/packages/eslint-config-andex) : An ESLint config for andex, with Typescript and Prettier support.
-- [token-lists](https://github.com/andex-fi/andex-toolkit/tree/master/packages/token-lists) : Main Andex token list and tools to validate it.
+## Install
 
-## How to use
+`yarn add @andex/uikit`
 
-Clone the repository
 
-```
-git clone git@github.com:andex-fi/andex-toolkit.git
-```
+## Setup
 
-Run yarn at the root of the workspace
+### Theme
+
+Before using Andex UIkit, you need to provide the theme file to styled-component.
 
 ```
-cd andex-toolkit
-yarn
+import { ThemeProvider } from 'styled-components'
+import { light, dark } from '@andex/uikit'
+...
+<ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
 
-Then, refer to the readme of each project.
+### Reset
+
+A reset CSS is available as a global styled component.
+
+```
+import { ResetCSS } from '@andex/uikit'
+...
+<ResetCSS />
+```
+
+### Types
+
+This project is built with Typescript and export all the relevant types.
+
+## How to use the UIkit
+
+If you want to use components from the UIkit, check the [Storybook documentation](https://andex.github.io/andex-uikit/)

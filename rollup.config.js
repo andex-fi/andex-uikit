@@ -1,6 +1,6 @@
 import typescript from "@rollup/plugin-typescript";
 import url from "@rollup/plugin-url";
-import pkg from "./package.json";
+import pkg from "./andex-uikit/package.json";
 
 export default {
   input: "src/index.ts",
