@@ -3,7 +3,6 @@ import { Flex } from "../Box";
 import isTouchDevice from "../../util/isTouchDevice";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import MenuItem from "../MenuItem/MenuItem";
-import IconComponent from "../Svg/IconComponent";
 import { MenuItemsProps } from "./types";
 
 const MenuItems: React.FC<MenuItemsProps> = ({ items = [], activeItem, activeSubItem, ...props }) => {
