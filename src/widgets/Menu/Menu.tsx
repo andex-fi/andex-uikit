@@ -65,9 +65,8 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Menu: React.FC<NavProps> = ({
   linkComponent = "a",
-  userMenu,
   banner,
-  // globalMenu,
+  rightSide,
   isDark,
   toggleTheme,
   currentLang,
@@ -153,7 +152,7 @@ const Menu: React.FC<NavProps> = ({
                   hideLanguage
                 />
               </Box> */}
-              {/* {globalMenu} */} {userMenu}
+              {rightSide}
             </Flex>
           </StyledNav>
         </FixedContainer>

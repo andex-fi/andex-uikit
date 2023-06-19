@@ -91,8 +91,12 @@ const defaultProps = {
   subLinks: links[0].items,
   footerLinks,
   profile: null,
-  userMenu: <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" />,
-  globalMenu: <GlobalMenuComponent />,
+  rightSide: (
+    <>
+      <GlobalMenuComponent />
+      {/* <UserMenuComponent account="0xbdda50183d817c3289f895a4472eb475967dc980" /> */}
+    </>
+  ),
   activeItem: "/swap",
   activeSubItem: "https://exchange.andex.finance",
   buyAndxLabel: "Buy ANDX",
