@@ -7,6 +7,7 @@ export interface MenuItemProps {
   href?: string;
   variant?: MenuItemVariant;
   statusColor?: keyof Colors;
+  scrollLayerRef?: React.RefObject<HTMLDivElement>;
   children?: any;
 }
 
