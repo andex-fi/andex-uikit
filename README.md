@@ -11,15 +11,14 @@ Andex UIkit is a set of React components and hooks used to build pages on Andex'
 
 ## Setup
 
-### Theme
+### Providers
 
-Before using Andex UIkit, you need to provide the theme file to styled-component.
+Before using Andex UIkit, you need to provide the theme file to UIKit provider.
 
 ```
-import { ThemeProvider } from 'styled-components'
-import { light, dark } from '@andex/uikit'
+import { UIKitProvider, light, dark } from '@andex/uikit'
 ...
-<ThemeProvider theme={isDark}>...</ThemeProvider>
+<UIKitProvider theme={isDark ? dark : light}>...</UIKitProvider>
 ```
 
 ### Reset

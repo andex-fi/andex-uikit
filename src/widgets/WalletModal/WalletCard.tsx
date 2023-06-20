@@ -1,4 +1,5 @@
 import React from "react";
+import { isDesktop } from "react-device-detect";
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
@@ -43,10 +44,8 @@ const WalletCard: React.FC<React.PropsWithChildren<Props>> = ({ login, walletCon
     <WalletButton
       variant="tertiary"
       onClick={() => {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-        // Since iOS does not support Trust Wallet we fall back to WalletConnect
-        if (walletConfig.title === "Trust Wallet" && isIOS) {
+        // TW point to WC on desktop
+        if (walletConfig.title === "Trust Wallet" && isDesktop) {
           login(ConnectorNames.WalletConnect);
         } else {
           login(walletConfig.connectorId);

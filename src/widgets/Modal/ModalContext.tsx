@@ -9,7 +9,7 @@ import {
   appearAnimation,
   disappearAnimation,
 } from "../../util/animationToolkit";
-import { useIsomorphicEffect } from "../../hooks"
+import { useIsomorphicEffect } from "../../hooks";
 import { Handler } from "./types";
 import { ModalContainer } from "./styles";
 import { unmountAnimation, mountAnimation } from "../../components/BottomDrawer/styles";

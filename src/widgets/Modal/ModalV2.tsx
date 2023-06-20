@@ -28,7 +28,7 @@ export function ModalV2({
   onDismiss?: () => void;
   closeOnOverlayClick?: boolean;
   children?: React.ReactNode;
-}) {
+}): any {
   const handleOverlayDismiss = () => {
     if (closeOnOverlayClick) {
       onDismiss?.();

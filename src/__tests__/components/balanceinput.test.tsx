@@ -1,11 +1,13 @@
 import React from "react";
-import { renderWithTheme } from "../../testHelpers";
+import { renderWithProvider } from "../../testHelpers";
 import BalanceInput from "../../components/BalanceInput/BalanceInput";
 
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const { asFragment } = renderWithTheme(<BalanceInput value="14" currencyValue="15 USD" onUserInput={handleChange} />);
+  const { asFragment } = renderWithProvider(
+    <BalanceInput value="14" currencyValue="15 USD" onUserInput={handleChange} />
+  );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c1 {
@@ -156,7 +158,7 @@ it("renders correctly", () => {
 });
 
 it("renders correctly with unit prop", () => {
-  const { asFragment } = renderWithTheme(
+  const { asFragment } = renderWithProvider(
     <BalanceInput value="14" currencyValue="15 USD" unit="CAKE" onUserInput={handleChange} />
   );
   expect(asFragment()).toMatchInlineSnapshot(`
@@ -329,7 +331,7 @@ it("renders correctly with unit prop", () => {
 });
 
 it("renders correctly with unit prop and switchEditingUnits", () => {
-  const { asFragment } = renderWithTheme(
+  const { asFragment } = renderWithProvider(
     <BalanceInput
       value="14"
       currencyValue="15 USD"
