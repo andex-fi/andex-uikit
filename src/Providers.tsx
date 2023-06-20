@@ -1,5 +1,5 @@
 import React from "react";
-import { MatchBreakpointsProvider } from "./contexts";
+import { MatchBreakpointsProvider, ToastsProvider } from "./contexts";
 import { ThemeProvider, DefaultTheme } from "styled-components";
 
 export const UIKitProvider: React.FC<React.PropsWithChildren<{ theme: DefaultTheme; children: React.ReactNode }>> = ({
@@ -7,8 +7,10 @@ export const UIKitProvider: React.FC<React.PropsWithChildren<{ theme: DefaultThe
   children,
 }) => {
   return (
-    <MatchBreakpointsProvider>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </MatchBreakpointsProvider>
+    <ThemeProvider theme={theme}>
+      <MatchBreakpointsProvider>
+        <ToastsProvider>{children}</ToastsProvider>
+      </MatchBreakpointsProvider>
+    </ThemeProvider>
   );
 };

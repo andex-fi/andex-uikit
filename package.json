@@ -43,6 +43,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.1.7",
+    "@types/react-transition-group": "^4.4.6",
     "@types/styled-components": "^5.1.9",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.2",
@@ -70,6 +71,7 @@
     "lodash": "^4.17.20",
     "react-device-detect": "^2.2.3",
     "react-popper": "^2.2.5",
+    "react-transition-group": "^4.4.5",
     "styled-system": "^5.1.5",
     "tslib": "^2.2.0"
   },
