@@ -5,7 +5,7 @@ import { IconComponentType, SvgProps } from "./types";
 
 const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 
-const AnimatedIconComponent: React.FC<IconComponentType> = ({
+const AnimatedIconComponent: React.FC<React.PropsWithChildren<IconComponentType>> = ({
   iconName,
   color = "textSubtle",
   activeColor = "secondary",

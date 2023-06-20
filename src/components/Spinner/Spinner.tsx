@@ -41,7 +41,7 @@ const FloatingAndexIcon = styled(LogoIcon)`
   transform: translate3d(0, 0, 0);
 `;
 
-const Spinner: React.FC<SpinnerProps> = ({ size = 128 }) => {
+const Spinner: React.FC<React.PropsWithChildren<SpinnerProps>> = ({ size = 128 }) => {
   return (
     <Container>
       {/* <RotatingAndexIcon width={`${size * 0.5}px`} /> */}

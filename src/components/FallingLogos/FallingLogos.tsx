@@ -65,7 +65,7 @@ const Logo = styled.div<LogoProps>`
   }
 `;
 
-const FallingBunnies: React.FC<FallingLogosProps> = ({
+const FallingLogos: React.FC<React.PropsWithChildren<FallingLogosProps>> = ({
   count = 30,
   size = 32,
   iterations = Infinity,
@@ -80,4 +80,4 @@ const FallingBunnies: React.FC<FallingLogosProps> = ({
   return <div>{bunnies}</div>;
 };
 
-export default FallingBunnies;
+export default FallingLogos;

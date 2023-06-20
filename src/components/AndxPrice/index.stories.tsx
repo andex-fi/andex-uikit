@@ -7,7 +7,7 @@ export default {
   component: AndxPrice,
 };
 
-const Template: React.FC<AndxPriceProps> = ({ ...args }) => {
+const Template: React.FC<React.PropsWithChildren<AndxPriceProps>> = ({ ...args }) => {
   return (
     <Flex p="10px">
       <AndxPrice {...args} />

@@ -17,7 +17,7 @@ import AndxPrice from "../AndxPrice/AndxPrice";
 import { LogoWithTextIcon, ArrowForwardIcon } from "../Svg";
 import { Button } from "../Button";
 
-const MenuItem: React.FC<FooterProps> = ({
+const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   items,
   isDark,
   toggleTheme,

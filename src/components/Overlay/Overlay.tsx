@@ -29,7 +29,11 @@ const BodyLock = () => {
   return null;
 };
 
-export const Overlay: FC<BoxProps> = (props) => {
+interface OverlayProps extends BoxProps {
+  isUnmounting?: boolean;
+}
+
+export const Overlay: FC<React.PropsWithChildren<OverlayProps>> = (props) => {
   return (
     <>
       <BodyLock />

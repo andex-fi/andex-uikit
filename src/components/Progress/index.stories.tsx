@@ -12,7 +12,7 @@ export default {
   argTypes: {},
 };
 
-const DefaultTemplate: React.FC = (args) => {
+const DefaultTemplate: React.FC<React.PropsWithChildren> = (args) => {
   const [progress, setProgress] = useState(random(1, 100));
 
   const handleClick = () => setProgress(random(1, 100));
@@ -48,7 +48,7 @@ Default.args = {
   useDark: false,
 };
 
-export const WithSecondary: React.FC = () => {
+export const WithSecondary: React.FC<React.PropsWithChildren> = () => {
   const [primaryStep, setPrimaryStep] = useState(10);
   const [secondaryStep, setSecondaryStep] = useState(40);
 
@@ -67,13 +67,13 @@ export const WithSecondary: React.FC = () => {
   );
 };
 
-export const WithSecondaryAndProgressBunny: React.FC = () => {
+export const WithSecondaryAndProgressBunny: React.FC<React.PropsWithChildren> = () => {
   const [primaryStep, setPrimaryStep] = useState(10);
   const [secondaryStep, setSecondaryStep] = useState(40);
 
   return (
     <div style={{ padding: "32px", width: "400px" }}>
-      <Progress primaryStep={primaryStep} secondaryStep={secondaryStep} showProgressBunny />
+      <Progress primaryStep={primaryStep} secondaryStep={secondaryStep} showProgressBall />
       <div style={{ marginTop: "32px" }}>
         <Button type="button" scale="sm" onClick={() => setPrimaryStep(random(1, 100))}>
           Random Primary Progress

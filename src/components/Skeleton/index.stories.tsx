@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Skeleton from "./Skeleton";
+import Skeleton, { SkeletonV2 } from "./Skeleton";
 
 export default {
   title: "Components/Skeleton",
@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Default: React.FC = (args) => {
+export const Default: React.FC<React.PropsWithChildren> = (args) => {
   return <Skeleton {...args} />;
 };
 
@@ -28,7 +28,7 @@ Animation.args = {
   animation: "waves",
 };
 
-export const ParentSize: React.FC = (args) => {
+export const ParentSize: React.FC<React.PropsWithChildren> = (args) => {
   return (
     <div style={{ width: 200, height: 90 }}>
       {" "}
@@ -37,7 +37,7 @@ export const ParentSize: React.FC = (args) => {
   );
 };
 
-export const Text: React.FC = (args) => {
+export const Text: React.FC<React.PropsWithChildren> = (args) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -48,4 +48,20 @@ export const Text: React.FC = (args) => {
   }, []);
 
   return <h1 style={{ width: 200 }}>{loading ? <Skeleton {...args} /> : "H1"}</h1>;
+};
+
+export const TextWithTransition: React.FC<React.PropsWithChildren> = (args) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+  return (
+    <SkeletonV2 {...args} isDataReady={!loading} width={200}>
+      <h1>H1</h1>
+    </SkeletonV2>
+  );
 };

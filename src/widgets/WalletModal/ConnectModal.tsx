@@ -49,14 +49,14 @@ const getPreferredConfig = (walletConfig: Config[]) => {
   ];
 };
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayCount = 3, t }) => {
+const ConnectModal: React.FC<React.PropsWithChildren<Props>> = ({ login, onDismiss = () => null, displayCount = 3, t }) => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const sortedConfig = getPreferredConfig(config);
   const displayListConfig = showMore ? sortedConfig : sortedConfig.slice(0, displayCount);
 
   return (
-    <ModalContainer minWidth="320px">
+    <ModalContainer $minWidth="320px">
       <ModalHeader background={getThemeValue(theme, "colors.gradients.bubblegum")}>
         <ModalTitle>
           <Heading>{t("Connect Wallet")}</Heading>

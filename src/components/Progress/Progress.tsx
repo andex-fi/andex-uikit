@@ -1,7 +1,7 @@
 import React from "react";
 import StyledProgress, { Bar } from "./StyledProgress";
-import ProgressBunnyWrapper from "./ProgressBunnyWrapper";
-import { ProgressBunny } from "../Svg";
+import ProgressBallWrapper from "./ProgressBallWrapper";
+import { ProgressBall } from "../Svg";
 import { ProgressProps, variants, scales } from "./types";
 
 const stepGuard = (step: number) => {
@@ -16,12 +16,12 @@ const stepGuard = (step: number) => {
   return step;
 };
 
-const Progress: React.FC<ProgressProps> = ({
+const Progress: React.FC<React.PropsWithChildren<ProgressProps>> = ({
   variant = variants.ROUND,
   scale = scales.MD,
   primaryStep = 0,
   secondaryStep = null,
-  showProgressBunny = false,
+  showProgressBall = false,
   useDark = true,
   children,
 }) => {
@@ -29,10 +29,10 @@ const Progress: React.FC<ProgressProps> = ({
     <StyledProgress $useDark={useDark} variant={variant} scale={scale}>
       {children || (
         <>
-          {showProgressBunny && (
-            <ProgressBunnyWrapper style={{ left: `${stepGuard(primaryStep)}%` }}>
-              <ProgressBunny />
-            </ProgressBunnyWrapper>
+          {showProgressBall && (
+            <ProgressBallWrapper style={{ left: `${stepGuard(primaryStep)}%` }}>
+              <ProgressBall />
+            </ProgressBallWrapper>
           )}
           <Bar $useDark={useDark} primary style={{ width: `${stepGuard(primaryStep)}%` }} />
           {secondaryStep ? <Bar $useDark={useDark} style={{ width: `${stepGuard(secondaryStep)}%` }} /> : null}

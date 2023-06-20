@@ -98,7 +98,7 @@ export { default as PresentCheckIcon } from "./Icons/PresentCheck";
 export { default as PresentNoneIcon } from "./Icons/PresentNone";
 export { default as PresentWonIcon } from "./Icons/PresentWon";
 export { default as PrizeIcon } from "./Icons/Prize";
-export { default as ProgressBunny } from "./Icons/ProgressBunny";
+export { default as ProgressBall } from "./Icons/ProgressBall";
 export { default as ProposalIcon } from "./Icons/Proposal";
 export { default as RedditIcon } from "./Icons/Reddit";
 export { default as RefreshIcon } from "./Icons/Refresh";

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ProgressBunnyWrapper = styled.div`
+const ProgressBallWrapper = styled.div`
   display: flex;
   z-index: 2;
   top: -65%;
@@ -9,4 +9,4 @@ const ProgressBunnyWrapper = styled.div`
   transition: left 200ms ease-out;
 `;
 
-export default ProgressBunnyWrapper;
+export default ProgressBallWrapper;

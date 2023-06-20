@@ -1,5 +1,6 @@
-import { FlexProps } from "styled-system";
 import { ReactElement } from "react";
+import { FlexProps } from "../../../../components/Box"
+
 
 export const variants = {
   DEFAULT: "default",
@@ -10,7 +11,7 @@ export const variants = {
 
 export type Variant = typeof variants[keyof typeof variants];
 
-export interface UserMenuProps extends FlexProps {
+export interface UserMenuProps extends Omit<FlexProps, "children"> {
   account?: string;
   text?: string;
   avatarSrc?: string;
