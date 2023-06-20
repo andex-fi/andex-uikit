@@ -1,5 +1,5 @@
 import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
-import React, { createContext, useEffect, useRef, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 import styled from "styled-components";
 import { Overlay } from "../../components/Overlay";
 import {
@@ -9,6 +9,7 @@ import {
   appearAnimation,
   disappearAnimation,
 } from "../../util/animationToolkit";
+import { useIsomorphicEffect } from "../../hooks"
 import { Handler } from "./types";
 import { ModalContainer } from "./styles";
 import { unmountAnimation, mountAnimation } from "../../components/BottomDrawer/styles";
@@ -71,7 +72,7 @@ const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true);
   const animationRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useIsomorphicEffect(() => {
     const setViewportHeight = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
