@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { SpaceProps, TypographyProps } from "styled-system";
 
 export const variants = {
@@ -26,4 +26,5 @@ export interface TagProps extends SpaceProps, TypographyProps {
   endIcon?: ReactNode;
   outline?: boolean;
   textTransform?: "uppercase" | "lowercase" | "capitalize";
+  style?: React.CSSProperties;
 }

@@ -4,6 +4,7 @@ export type MenuItemVariant = "default" | "subMenu";
 
 export interface MenuItemProps {
   isActive?: boolean;
+  isDisabled?: boolean;
   href?: string;
   variant?: MenuItemVariant;
   statusColor?: keyof Colors;
@@ -13,6 +14,7 @@ export interface MenuItemProps {
 
 export type StyledMenuItemProps = {
   $isActive?: boolean;
+  $isDisabled?: boolean;
   $variant?: MenuItemVariant;
   $statusColor?: keyof Colors;
 };

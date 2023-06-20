@@ -37,7 +37,9 @@ export const ModalBody = styled(Flex)`
   }
 `;
 
-export const ModalCloseButton: React.FC<React.PropsWithChildren<{ onDismiss: ModalProps["onDismiss"] }>> = ({ onDismiss }) => {
+export const ModalCloseButton: React.FC<React.PropsWithChildren<{ onDismiss: ModalProps["onDismiss"] }>> = ({
+  onDismiss,
+}) => {
   return (
     <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
       <CloseIcon color="primary" />

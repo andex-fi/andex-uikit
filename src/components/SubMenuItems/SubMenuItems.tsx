@@ -16,7 +16,12 @@ import { SubMenuItemsProps } from "./types";
 const SUBMENU_CHEVRON_CLICK_MOVE_PX = 100;
 const SUBMENU_SCROLL_DEVIATION = 3;
 
-const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({ items = [], activeItem, isMobileOnly = false, ...props }) => {
+const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({
+  items = [],
+  activeItem,
+  isMobileOnly = false,
+  ...props
+}) => {
   const { isMobile } = useMatchBreakpointsContext();
   const scrollLayerRef = useRef<HTMLDivElement>(null);
   const chevronLeftRef = useRef<HTMLDivElement>(null);
@@ -63,7 +68,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({ it
         onScroll={debounce(layerController, 100)}
         ref={scrollLayerRef}
       >
-        {items.map(({ label, href, icon, itemProps, type }) => {
+        {items.map(({ label, href, icon, itemProps, type, disabled }) => {
           const Icon = icon;
           const isExternalLink = type === DropdownMenuItemType.EXTERNAL_LINK;
           const linkProps = isExternalLink
@@ -80,6 +85,7 @@ const SubMenuItems: React.FC<React.PropsWithChildren<SubMenuItemsProps>> = ({ it
                   href={href}
                   scrollLayerRef={scrollLayerRef}
                   isActive={href === activeItem}
+                  isDisabled={disabled}
                   variant="subMenu"
                   {...itemProps}
                   {...linkProps}

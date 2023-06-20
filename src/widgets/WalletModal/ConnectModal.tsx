@@ -49,7 +49,12 @@ const getPreferredConfig = (walletConfig: Config[]) => {
   ];
 };
 
-const ConnectModal: React.FC<React.PropsWithChildren<Props>> = ({ login, onDismiss = () => null, displayCount = 3, t }) => {
+const ConnectModal: React.FC<React.PropsWithChildren<Props>> = ({
+  login,
+  onDismiss = () => null,
+  displayCount = 3,
+  t,
+}) => {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const sortedConfig = getPreferredConfig(config);
