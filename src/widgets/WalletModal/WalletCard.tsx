@@ -56,7 +56,7 @@ const WalletCard: React.FC<React.PropsWithChildren<Props>> = ({ login, walletCon
         localStorage.setItem(connectorLocalStorageKey, walletConfig.connectorId);
         onDismiss();
       }}
-      id={`wallet-connect-${title.toLocaleLowerCase()}`}
+      id={`wallet-connect-${title.toLowerCase()}`}
     >
       <Icon width="40px" mb="8px" />
       <Text fontSize="14px">{title}</Text>
