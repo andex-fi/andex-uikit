@@ -11,7 +11,7 @@ export const MODAL_SWIPE_TO_CLOSE_VELOCITY = 300;
 export const ModalWrapper = ({ children, onDismiss, minWidth, ...props }: PropsWithChildren<ModalWrapperProps>) => {
   const { isMobile } = useMatchBreakpoints();
   const wrapperRef = useRef<HTMLDivElement>(null);
-  
+
   return (
     // @ts-ignore
     <ModalContainer
@@ -21,7 +21,7 @@ export const ModalWrapper = ({ children, onDismiss, minWidth, ...props }: PropsW
       onDragStart={() => {
         if (wrapperRef.current) wrapperRef.current.style.animation = "none";
       }}
-      onDragEnd={(e: any, info: { velocity: { y: number; }; }) => {
+      onDragEnd={(e: any, info: { velocity: { y: number } }) => {
         if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
       }}
       ref={wrapperRef}

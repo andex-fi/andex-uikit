@@ -8,14 +8,14 @@ import getPortalRoot from "../../util/getPortalRoot";
 import { StyledModalWrapper } from "./ModalContext";
 
 export interface ModalV2Props {
-    isOpen?: boolean;
-    onDismiss?: () => void;
-    closeOnOverlayClick?: boolean;
-    children?: React.ReactNode;
+  isOpen?: boolean;
+  onDismiss?: () => void;
+  closeOnOverlayClick?: boolean;
+  children?: React.ReactNode;
 }
 
-export function ModalV2({ isOpen, onDismiss, closeOnOverlayClick, children, ...props }: ModalV2Props & BoxProps) {
-    const animationRef = useRef<HTMLDivElement>(null);
+export function ModalV2({ isOpen, onDismiss, closeOnOverlayClick, children, ...props }: ModalV2Props & BoxProps): any {
+  const animationRef = useRef<HTMLDivElement>(null);
   const handleOverlayDismiss = () => {
     if (closeOnOverlayClick) {
       onDismiss?.();
@@ -25,20 +25,22 @@ export function ModalV2({ isOpen, onDismiss, closeOnOverlayClick, children, ...p
 
   if (portal) {
     return createPortal(
-        <LazyMotion features={domMax}>
+      <LazyMotion features={domMax}>
         <AnimatePresence>
-          <StyledModalWrapper
-            ref={animationRef}
-            // @ts-ignore
-            onAnimationStart={() => animationHandler(animationRef.current)}
-            {...animationMap}
-            variants={animationVariants}
-            transition={{ duration: 0.3 }}
-            {...props}
-          >
-            <Overlay onClick={handleOverlayDismiss} />
-            {children}
-          </StyledModalWrapper>
+          {isOpen && (
+            <StyledModalWrapper
+              ref={animationRef}
+              // @ts-ignore
+              onAnimationStart={() => animationHandler(animationRef.current)}
+              {...animationMap}
+              variants={animationVariants}
+              transition={{ duration: 0.3 }}
+              {...props}
+            >
+              <Overlay onClick={handleOverlayDismiss} />
+              {children}
+            </StyledModalWrapper>
+          )}
         </AnimatePresence>
       </LazyMotion>,
       portal
