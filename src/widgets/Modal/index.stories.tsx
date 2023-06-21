@@ -104,11 +104,7 @@ export const ReactingToOutsideChanges: React.FC<React.PropsWithChildren> = () =>
     }, 500);
     return () => clearInterval(intervalId);
   }, []);
-  const ReactiveModal: React.FC<React.PropsWithChildren<ModalProps & { count: number }>> = ({
-    title,
-    count,
-    onDismiss,
-  }) => {
+  const ReactiveModal: React.FC<React.PropsWithChildren<ModalProps & { count: number }>> = ({ title, count, onDismiss }) => {
     return (
       <Modal title={title} onDismiss={onDismiss}>
         <h2>Counter: {count}</h2>
