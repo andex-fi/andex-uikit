@@ -10,6 +10,7 @@ export * from "./AndxPrice";
 export * from "./Checkbox";
 export * from "./Dropdown";
 export * from "./FallingLogos";
+export * from "./Footer";
 export * from "./Heading";
 export * from "./Image";
 export * from "./Input";
